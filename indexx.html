@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>College Admission Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    .form-container {
+      max-width: 600px;
+      margin: 50px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      text-align: center;
+    }
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+<div class="form-container">
+  <h2>College Admission Form</h2>
+  <form id="admissionForm">
+    <!-- Name Field -->
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name" required placeholder="Enter your full name">
+
+    <!-- Email Field -->
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required placeholder="Enter your email">
+
+    <!-- Phone Number Field -->
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+
+    <!-- Program Dropdown -->
+    <label for="program">Program Applying For</label>
+    <select id="program" name="program" required>
+      <option value="" disabled selected>Select your program</option>
+      <option value="undergraduate">Undergraduate</option>
+      <option value="graduate">Graduate</option>
+      <option value="phd">PhD</option>
+    </select>
+
+    <!-- Personal Statement Textarea -->
+    <label for="statement">Personal Statement</label>
+    <textarea id="statement" name="statement" rows="5" required placeholder="Write your personal statement here"></textarea>
+
+    <!-- Submit Button -->
+    <button type="submit">Submit Application</button>
+  </form>
+</div>
+
+<script>
+  // JavaScript for Form Validation
+  document.getElementById('admissionForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from submitting immediately
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const program = document.getElementById('program').value;
+    const statement = document.getElementById('statement').value;
+
+    // Simple Validation
+    if (name === '' || email === '' || phone === '' || program === '' || statement === '') {
+      alert('Please fill in all fields before submitting.');
+      return false;
+    }
+
+    // After successful validation, we can simulate form submission (for demonstration purposes)
+    alert('Application Submitted Successfully!');
+    document.getElementById('admissionForm').reset(); // Reset the form after submission
+  });
+</script>
+
+</body>
+</html>
